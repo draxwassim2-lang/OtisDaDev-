@@ -106,11 +106,7 @@
             aspect-ratio:16/9;background:#333;position:relative;
             border-bottom:3px solid var(--black);
         }
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-content{padding:24px;flex-grow:1;}
         .card-title{font-weight:700;font-size:1.4rem;margin-bottom:10px;}
         .card-tags{display:flex;flex-wrap:wrap;gap:8px;}
@@ -118,6 +114,30 @@
             background:rgba(0,0,0,.2);padding:4px 12px;border-radius:8px;
             font-size:.8rem;font-weight:600;
         }
+
+        /* PRICES STYLES */
+        .prices-section { padding: 100px 5%; background: rgba(0,0,0,0.1); }
+        .prices-container { max-width: 1000px; margin: 0 auto; }
+        .prices-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 50px;
+        }
+        .price-item {
+            background: #fff; color: #000;
+            padding: 30px; border-radius: 24px;
+            border: 4px solid var(--black);
+            box-shadow: 8px 8px 0 var(--black);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .price-name { display: block; font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+        .price-tag { display: flex; align-items: center; gap: 8px; justify-content: center; }
+        .price-value { font-size: 2.5rem; font-weight: 900; color: var(--purple); }
+        .currency-label { font-size: 1.2rem; font-weight: 700; color: #444; }
 
         .contact{padding:100px 5%;}
         .contact-box{
@@ -139,7 +159,6 @@
             .nav-links{display:none;}
             .mobile-toggle{display:block;}
             .hero-btns{flex-direction:column;}
-            .contact-box{padding:30px;}
         }
 
         #mobile-menu{
@@ -162,6 +181,7 @@
         <div class="nav-links">
             <a href="#">HOME</a>
             <a href="#showcase">SHOWCASE</a>
+            <a href="#prices">PRICES</a>
             <a href="#contact">CONTACT</a>
         </div>
         <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
@@ -171,6 +191,7 @@
         <button class="menu-close" onclick="toggleMenu()">✕</button>
         <a href="#" onclick="toggleMenu()">HOME</a>
         <a href="#showcase" onclick="toggleMenu()">SHOWCASE</a>
+        <a href="#prices" onclick="toggleMenu()">PRICES</a>
         <a href="#contact" onclick="toggleMenu()">CONTACT</a>
     </div>
 
@@ -181,7 +202,7 @@
             <p class="hero-desc">Building high-energy web experiences with a focus on UI/UX and game development interfaces.</p>
             <div class="hero-btns">
                 <a href="#showcase" class="btn btn-primary">VIEW MY WORK</a>
-                <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
+                <a href="#prices" class="btn btn-secondary">VIEW PRICES</a>
             </div>
         </div>
     </section>
@@ -189,46 +210,67 @@
     <section class="showcase" id="showcase">
         <h2 class="section-title reveal">RECENT SHOWCASE</h2>
         <div class="grid">
-            <!-- Card 1 -->
+            <!-- Updated Profile Render Image -->
             <div class="card reveal">
                 <div class="card-img">
-                    <img src="https://i.postimg.cc/9MX5R4X4/Screenshot-2025-08-22-132204-1.webp" alt="GFX 1">
+                    <img src="https://i.postimg.cc/ZKx7tXgp/PFP.webp" alt="Profile GFX">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">PROJECT NEON</h3>
-                    <div class="card-tags">
-                        <span>UI/UX</span>
-                        <span>DASHBOARD</span>
-                    </div>
+                    <h3 class="card-title">PROFILE RENDER</h3>
+                    <div class="card-tags"><span>GFX</span><span>AVATAR</span></div>
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="card reveal">
+            <div class="card reveal" style="transition-delay:100ms">
                 <div class="card-img">
                     <img src="https://i.postimg.cc/PrpF7wxk/Screenshot-2025-08-23-000806-1.webp" alt="GFX 2">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">ROBLOX PORTFOLIO</h3>
-                    <div class="card-tags">
-                        <span>WEB DEV</span>
-                        <span>FRONTEND</span>
-                    </div>
+                    <h3 class="card-title">BENYX SHOWCASE</h3>
+                    <div class="card-tags"><span>MAP DESIGN</span><span>GFX</span></div>
                 </div>
             </div>
-
-            <!-- Card 3 -->
-            <div class="card reveal">
+            <div class="card reveal" style="transition-delay:200ms">
                 <div class="card-img">
                     <img src="https://i.postimg.cc/mgWV6pJ8/hq720.png" alt="GFX 3">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">INTERFACE DESIGN</h3>
-                    <div class="card-tags">
-                        <span>UI DESIGN</span>
-                        <span>GFX</span>
+                    <h3 class="card-title">MM2 DELAYED</h3>
+                    <div class="card-tags"><span>THUMBNAIL</span><span>ART</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICES SECTION -->
+    <section class="prices-section" id="prices">
+        <div class="prices-container">
+            <h2 class="section-title reveal">PRICES</h2>
+            <p class="reveal" style="text-align: center; margin-bottom: 30px; font-weight: 700; font-size: 1.2rem;">All prices are listed in Robux</p>
+            <div class="prices-grid">
+                <div class="price-item reveal">
+                    <span class="price-name">Profile GFX</span>
+                    <div class="price-tag">
+                        <span class="price-value">150</span>
+                        <span class="currency-label">Robux</span>
                     </div>
                 </div>
+                <div class="price-item reveal" style="transition-delay:100ms">
+                    <span class="price-name">Banner</span>
+                    <div class="price-tag">
+                        <span class="price-value">270</span>
+                        <span class="currency-label">Robux</span>
+                    </div>
+                </div>
+                <div class="price-item reveal" style="transition-delay:200ms">
+                    <span class="price-name">Thumbnail</span>
+                    <div class="price-tag">
+                        <span class="price-value">500</span>
+                        <span class="currency-label">Robux</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;" class="reveal">
+                <a href="https://discord.gg/wPSbfQnRMD" target="_blank" class="btn btn-primary" style="font-size: 1.5rem; padding: 20px 60px;">ORDER NOW</a>
             </div>
         </div>
     </section>
@@ -257,7 +299,6 @@
     <footer><p class="footer-text">OtisDaDev &bull; 2026</p></footer>
 
     <script>
-        /* SCROLL PROGRESS + BACK TO TOP */
         const btt = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             const s = window.scrollY;
@@ -267,24 +308,21 @@
             reveal();
         });
 
-        /* REVEAL */
         function reveal() {
             document.querySelectorAll('.reveal').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 150)
+                if (el.getBoundingClientRect().top < window.innerHeight - 100)
                     el.classList.add('active');
             });
         }
         window.addEventListener('load', reveal);
 
-        /* PARALLAX */
         document.addEventListener('mousemove', e => {
-            const x = (e.clientX - window.innerWidth/2) * 0.02;
-            const y = (e.clientY - window.innerHeight/2) * 0.02;
+            const x = (e.clientX - window.innerWidth/2) * 0.01;
+            const y = (e.clientY - window.innerHeight/2) * 0.01;
             const t = document.querySelector('.hero-title');
             if(t) t.style.transform = `translate(${x}px,${y}px)`;
         });
 
-        /* MOBILE MENU */
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('open');
         }
